@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\begin{document}
+
+\section{Computation of Micro and Macro F1-Score}
+
+Given:
+\begin{itemize}
+    \item Ground-truth: $[0, 0, 0, 0, 0, 0, 0, 0, 0, 1]$
+    \item Predictions: $[0, 0, 0, 0, 0, 0, 0, 0, 1, 1]$
+\end{itemize}
+
+We define the terms used for computation:
+\begin{itemize}
+    \item \textbf{True Positives (TP)}: Correctly predicted instances of a class.
+    \item \textbf{False Positives (FP)}: Incorrectly predicted instances of a class.
+    \item \textbf{False Negatives (FN)}: Missed instances of a class.
+    \item \textbf{Precision}: $\frac{TP}{TP + FP}$
+    \item \textbf{Recall}: $\frac{TP}{TP + FN}$
+    \item \textbf{F1-Score}: $2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}$
+\end{itemize}
+
+\subsection{Confusion Matrix for Class 0 (Ham)}
+\begin{itemize}
+    \item TP = 8
+    \item FP = 0
+    \item FN = 1
+\end{itemize}
+
+The Precision for Class 0 is:
+$$ \text{Precision} = \frac{8}{8} = 1 $$
+
+The Recall for Class 0 is:
+$$ \text{Recall} = \frac{8}{9} = 0.89 $$
+
+The F1-Score for Class 0 is:
+$$ \text{F1-Score} = 2 \times \frac{1.0 \times 0.89}{1.0 + 0.89} \approx 0.94 $$
+
+\subsection{Confusion Matrix for Class 1 (Spam)}
+\begin{itemize}
+    \item TP = 1
+    \item FP = 1
+    \item FN = 0
+\end{itemize}
+
+The Precision for Class 1 is:
+$$ \text{Precision} = \frac{1}{2} = 0.5 $$
+
+The Recall for Class 1 is:
+$$ \frac{1}{1} = 1 $$
+
+The F1-Score for Class 1 is:
+$$ \text{F1-Score} = 2 \times \frac{0.5 \times 1.0}{0.5 + 1} \approx 0.67 $$
+
+\subsection{Micro F1-Score}
+
+Given that the number of instances of Class 0 is 9 and Class 1 is 1, the weighted F1-Scores are:
+
+\begin{itemize}
+    \item Weighted F1-Score for Class 0: $0.94 \times 9 = 8.46$
+    \item Weighted F1-Score for Class 1: $0.67 \times 1 = 0.67$
+\end{itemize}
+
+Thus, the total weighted F1-Score is:
+$$ 8.46 + 0.67 = 9.13 $$
+
+The Micro F1-Score is:
+$$ \frac{9.13}{10} \approx 0.91 $$
+
+\subsection{Macro F1-Score}
+
+The Macro F1-Score is calculated by averaging the F1-Scores for each class:
+
+$$ \frac{0.94 + 0.67}{2} \approx 0.80 $$
+
+\section{Which Metric to Use for Spam Detection?}
+
+For spam detection, the Macro F1-Score is generally preferable because it treats each class equally, which is crucial for tasks with class imbalance, as is typical with spam detection. This metric ensures that each class, even if underrepresented, has equal importance in assessing the classifier's performance. Using Micro F1-Score can result in biases toward the majority class, potentially masking poor performance in the minority class (spam in this case). 
+
+Therefore, for tasks where class imbalance is present and each class is equally important, the Macro F1-Score is the preferred metric.
+
+\end{document}
+https://tex.cloud.uni-hannover.de/project/663604e083b913a929002454

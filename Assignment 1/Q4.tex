@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section*{Part A: POS 1-grams and POS 2-grams of each sentence}
+
+\subsection*{POS 1-grams}
+\begin{itemize}
+    \item \textbf{Sentence 1}: DT, NNS, VBP, JJ
+    \item \textbf{Sentence 2}: NNP, VBZ, DT, NN
+    \item \textbf{Sentence 3}: NNP, VBZ, JJ
+\end{itemize}
+
+\subsection*{POS 2-grams}
+\begin{itemize}
+    \item \textbf{Sentence 1}: DT NNS, NNS VBP, VBP JJ
+    \item \textbf{Sentence 2}: NNP VBZ, VBZ DT, DT NN
+    \item \textbf{Sentence 3}: NNP VBZ, VBZ JJ
+\end{itemize}
+
+\section*{Part B: Jaccard similarity of each pair of sentences using POS 1-grams and POS 2-grams}
+
+\subsection*{Jaccard Similarity}
+Given two sets \( A \) and \( B \), the Jaccard similarity is given by:
+\[
+J(A, B) = \frac{|A \cap B|}{|A \cup B|}
+\]
+
+\subsection*{POS 1-grams}
+\begin{itemize}
+    \item \textbf{Sentence 1 and Sentence 2}:
+    \begin{itemize}
+        \item \( A = \{ \text{DT}, \text{NNS}, \text{VBP}, \text{JJ} \} \)
+        \item \( B = \{ \text{NNP}, \text{VBZ}, \text{DT}, \text{NN} \} \)
+        \item Intersection: \( \text{DT} \)
+        \item Union: \( \{ \text{DT}, \text{NNS}, \text{VBP}, \text{JJ}, \text{NNP}, \text{VBZ}, \text{NN} \} \)
+        \item Jaccard Similarity: \( \frac{1}{7} \approx 0.14 \)
+    \end{itemize}
+
+    \item \textbf{Sentence 1 and Sentence 3}:
+    \begin{itemize}
+        \item \( A = \{ \text{DT}, \text{NNS}, \text{VBP}, \text{JJ} \} \)
+        \item \( B = \{ \text{NNP}, \text{VBZ}, \text{JJ} \} \)
+        \item Intersection: \( \text{JJ} \)
+        \item Union: \( \{ \text{DT}, \text{NNS}, \text{VBP}, \text{JJ}, \text{NNP}, \text{VBZ} \} \)
+        \item Jaccard Similarity: \( \frac{1}{7} \approx 0.14 \)
+    \end{itemize}
+
+    \item \textbf{Sentence 2 and Sentence 3}:
+    \begin{itemize}
+        \item \( A = \{ \text{NNP}, \text{VBZ}, \text{DT}, \text{NN} \} \)
+        \item \( B = \{ \text{NNP}, \text{VBZ}, \text{JJ} \} \)
+        \item Intersection: \( \text{NNP}, \text{VBZ} \)
+        \item Union: \( \{ \text{NNP}, \text{VBZ}, \text{DT}, \text{NN}, \text{JJ} \} \)
+        \item Jaccard Similarity: \( \frac{2}{5} = 0.4 \)
+    \end{itemize}
+\end{itemize}
+
+\subsection*{POS 2-grams}
+\begin{itemize}
+    \item \textbf{Sentence 1 and Sentence 2}:
+    \begin{itemize}
+        \item \( A = \{ \text{DT NNS}, \text{NNS VBP}, \text{VBP JJ} \} \)
+        \item \( B = \{ \text{NNP VBZ}, \text{VBZ DT}, \text{DT NN} \} \)
+        \item Intersection: None
+        \item Union: \( \{ \text{DT NNS}, \text{NNS VBP}, \text{VBP JJ}, \text{NNP VBZ}, \text{VBZ DT}, \text{DT NN} \} \)
+        \item Jaccard Similarity: \( \frac{0}{6} = 0 \)
+    \end{itemize}
+
+    \item \textbf{Sentence 1 and Sentence 3}:
+    \begin{itemize}
+        \item \( A = \{ \text{DT NNS}, \text{NNS VBP}, \text{VBP JJ} \} \)
+        \item \( B = \{ \text{NNP VBZ}, \text{VBZ JJ} \} \)
+        \item Intersection: None
+        \item Union: \( \{ \text{DT NNS}, \text{NNS VBP}, \text{VBP JJ}, \text{NNP VBZ}, \text{VBZ JJ} \} \)
+        \item Jaccard Similarity: \( \frac{0}{6} = 0 \)
+    \end{itemize}
+
+    \item \textbf{Sentence 2 and Sentence 3}:
+    \begin{itemize}
+        \item \( A = \{ \text{NNP VBZ}, \text{VBZ DT}, \text{DT NN} \} \)
+        \item \( B = \{ \text{NNP VBZ}, \text{VBZ JJ} \} \)
+        \item Intersection: \( \text{NNP VBZ} \)
+        \item Union: \( \{ \text{NNP VBZ}, \text{VBZ DT}, \text{DT NN}, \text{VBZ JJ} \} \)
+        \item Jaccard Similarity: \( \frac{1}{4} = 0.25 \)
+    \end{itemize}
+\end{itemize}
+
+\end{document}
