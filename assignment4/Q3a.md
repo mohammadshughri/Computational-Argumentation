@@ -1,0 +1,1 @@
+Local sufficiency can be a dimension since we have just been informed about the argument length. Length is not necessarily effective but can present more relevance and validity and we don't have information about audience persuasion which is the concept of clarity and arrangement.

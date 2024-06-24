@@ -1,0 +1,1 @@
+Adjectives, adverbs, and sentiment words try to persuade the audience, so emotional appeal can be a good dimension. Arrangement is about the order we present arguments, not inner relations.
