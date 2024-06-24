@@ -13,7 +13,7 @@ $ \hat{p}(c_3) = \hat{p}(c_2)/2 = \frac{3}{8}/2 = \frac{3}{16} $
 
 Iteration 2
 
-$ \hat{p}(c_1) = \hat{p}(c_2)/2 + \hat{p}(c_3)/2 = \frac{3}{8}/2 + \frac{3}{16}/2 = \frac{9}/{32}$
+$ \hat{p}(c_1) = \hat{p}(c_2)/2 + \hat{p}(c_3)/2 = \frac{3}{8}/2 + \frac{3}{16}/2 = \frac{9}{32}$
 
 $ \hat{p}(c_2) = \hat{p}(c_1) + \hat{p}(c_3)/2 = \frac{9}{32} + \frac{3}{32} = \frac{12}{32} = \frac{3}{8} $
 

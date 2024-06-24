@@ -1,6 +1,7 @@
-b) Choosing between Mean Squared Error (MSE) and Mean Absolute Error (MAE):
+One reason for MAE is that it doesn't give extra weight to outliers, which the domains gives us no reason to do. That said,
+range of the values is very small, so the worst outliers are only weighted 3 times more than normal.
 
-Given that most articles are labeled as either very effective (3) or not effective (0), Mean Squared Error (MSE) would be the better choice.
+Theoretically, it is more interpretable, since it is in the same unit as the original data, but in this case
+since the scale is ordinal, this doesn't matter that much.
 
-Explanation: MSE gives higher weight to larger errors due to squaring the differences. In this case, where predictions are likely to be either close to correct (near 0 or 3) or very wrong (predicting 0 for a 3 or vice versa), MSE will penalize these large errors more heavily.
-This aligns with the goal of distinguishing between very effective and not effective articles, which appear to be the most common and important categories in this dataset.
+Unless you need any properties of MSE (like differentiability for a close form solution) for your model, I would choose MAE.
